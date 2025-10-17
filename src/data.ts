@@ -191,5 +191,5 @@ export const asciiArt = `
 
     🚀 Desenvolvedor Full-Stack
 
-    Digite 'help' para começar
+    Digite 'ajuda' para começar
 `;

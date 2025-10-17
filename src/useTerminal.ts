@@ -47,66 +47,77 @@ Bem-vindo ao meu portfólio interativo!
 
 Digite um dos comandos abaixo para navegar:
 
-XP       - Experiencia profissional
-EDU      - Educacao e formacao  
-PRJ      - Projetos realizados
-CTT      - Informacoes de contato
-SKILLS   - Habilidades tecnicas
-LANG     - Idiomas
-CV       - Baixar curriculo PDF
-CLEAR    - Limpar terminal
-HELP     - Mostrar comandos disponiveis
+EXPERIENCIA  - Experiência profissional (exp)
+EDUCACAO     - Educação e formação (formacao)
+PROJETOS     - Projetos realizados (portfolio)
+CONTATO      - Informações de contato (email)
+HABILIDADES  - Habilidades técnicas (skills)
+IDIOMAS      - Idiomas (lang)
+CURRICULO    - Baixar currículo PDF (cv)
+LIMPAR       - Limpar terminal (clear)
+AJUDA        - Mostrar comandos disponíveis (help)
 
 Desenvolvido com React + TypeScript + Vite`;
 }
 
 function processCommand(command: string): string {
   switch (command) {
-    case 'xp':
+    case 'experiencia':
+    case 'exp':
       return formatExperiences();
     
-    case 'edu':
+    case 'educacao':
+    case 'formacao':
       return formatEducation();
     
-    case 'prj':
+    case 'projetos':
+    case 'portfolio':
       return formatProjects();
     
-    case 'ctt':
+    case 'contato':
+    case 'email':
       return formatContact();
     
+    case 'habilidades':
     case 'skills':
       return formatSkills();
     
+    case 'idiomas':
     case 'lang':
       return formatLanguages();
     
+    case 'curriculo':
     case 'cv':
       downloadCV();
       return formatCVDownload();
     
+    case 'limpar':
     case 'clear':
       return '';
     
+    case 'ajuda':
     case 'help':
       return `
-Comandos disponiveis:
+Comandos disponíveis:
 
-XP       - Mostra experiencia profissional
-EDU      - Mostra educacao e certificacoes
-PRJ      - Lista projetos desenvolvidos
-CTT      - Exibe informacoes de contato
-SKILLS   - Lista habilidades tecnicas
-LANG     - Mostra idiomas
-CV       - Baixa curriculo em PDF
-CLEAR    - Limpa o terminal
-HELP     - Mostra esta ajuda
+EXPERIENCIA    - Mostra experiência profissional (atalho: exp)
+EDUCACAO       - Mostra educação e certificações (atalho: formacao)
+PROJETOS       - Lista projetos desenvolvidos (atalho: portfolio)
+CONTATO        - Exibe informações de contato (atalho: email)
+HABILIDADES    - Lista habilidades técnicas (atalho: skills)
+IDIOMAS        - Mostra idiomas (atalho: lang)
+CURRICULO      - Baixa currículo em PDF (atalho: cv)
+LIMPAR         - Limpa o terminal (atalho: clear)
+AJUDA          - Mostra esta ajuda (atalho: help)
+
+💡 Dica: Você pode usar tanto o comando completo quanto o atalho!
 `;
 
     case '':
       return '';
     
     default:
-      return `Comando '${command}' nao encontrado. Digite 'help' para ver os comandos disponiveis.`;
+      return `Comando '${command}' não encontrado. Digite 'ajuda' para ver os comandos disponíveis.`;
   }
 }
 
